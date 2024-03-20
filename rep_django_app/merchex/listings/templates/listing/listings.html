@@ -1,0 +1,27 @@
+{% extends 'listing/base.html' %}
+
+{% block content %}
+    <h2>voici la liste de nos annonces </h2>
+    <p>Nous avons
+        {% if titles|length < 5 %}
+            peu d'annonces pour vous
+        {% elif titles|length < 10 %}
+            quelques annonces pour vous
+        {% else %}
+            les annonces sont florissantes
+        {% endif %}
+    </p>
+    
+
+    <ul>
+        <ul>
+            {% for title in titles %}
+                <li>{{ title.title }}</li>
+            {% endfor %}
+        </ul>
+        
+    
+    </ul>
+
+    
+{% endblock %}
