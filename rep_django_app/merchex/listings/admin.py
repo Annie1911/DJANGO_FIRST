@@ -1,7 +1,16 @@
 from django.contrib import admin
 
-from django.listings.models import Band
+from .models import Band,Listings
 
-admin.sit.register(Band)
+class BandAdmin(admin.ModelAdmin):
+    list_display=('name', 'year_formed', 'genre')
+
+class ListingsAdmin(admin.ModelAdmin):
+    list_display=('title','band')
+
+
+
+admin.site.register(Band,BandAdmin)
+admin.site.register(Listings,ListingsAdmin)
 
 # Register your models here.
