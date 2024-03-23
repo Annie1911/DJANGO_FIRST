@@ -5,9 +5,14 @@ from listings.models import Band,Listings
 
 
 
-def hello(request):
+def band_list(request):
     bands = Band.objects.all()
-    return render (request,'listing/hello.html', {'bands': bands})
+    return render (request,'listing/band_list.html', {'bands': bands})
+
+def band_detail(request,id):
+    bands = Band.objects.get(id=id)
+    return render (request,'listing/band_detail.html' , {'band' : bands })
+
 
 
 
