@@ -1,0 +1,21 @@
+{% extends 'listing/base.html' %}
+
+{% block content %}
+
+    
+
+    <a href="{% url 'band-create' %}">créer un nouveau groupe</a>
+
+    <p>Mes groupes préférés sont :</p>
+    
+    <ul>
+        {% for band in bands %}
+        <li>
+            <a href="{% url 'band-detail' band.id %}">{{ band.name }}</a>
+            <a href="{% url 'band-change' band.id %}">[modifier]</a>
+        </li>
+        {% endfor %}
+    </ul>
+    
+    
+{% endblock %}

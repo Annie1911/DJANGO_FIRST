@@ -1,0 +1,11 @@
+{% extends 'listing/base.html' %}
+{% block content %}
+
+<h1>creation d'un nouveu groupe </h1>
+
+<form action="" method="post">
+    {% csrf_token %}
+    {{forms.as_p}}
+    <input type="submit" value="Envoyer">
+</form>
+{% endblock %}

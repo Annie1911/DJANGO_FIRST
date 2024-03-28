@@ -17,6 +17,15 @@
 
 <p>{{ band.biography }}</p>
 
-<a hef="{% url 'band_list' %}">Retour à tous les groupes</a>
+<h3>
+   <button>
+    <a href="{% url 'band-change' band.id %}">Modifier ce groupe</a>  
+   </button> 
+    <button>
+        <a href="{% url 'bands-list' %}" style = "text-decoration : none" >Retourner à la liste des groupes</a>
+        
+    </button>
+</h3>
+
 
 {% endblock %}
